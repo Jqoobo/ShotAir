@@ -2,14 +2,13 @@
   <div 
         id="SideNavMain" 
         :class="route.fullPath === '/' ? 'lg:w-[310px]' : 'lg:w-[220px]'" 
-        class="fixed z-20 bg-[#121212] pt-[85px] h-full lg:border-r-0 border-r w-[75px] overflow-auto"
+        class="fixed z-20  pt-[85px] h-full lg:border-r-0 border-r w-[75px] overflow-auto"
     >
-    <div class="lg:w-full w-[55px] mx-auto text-white">
+    <div class="lg:w-full w-[55px] mx-auto text-black">
         <NuxtLink to="/">
             <MenuItem iconString="Dla Ciebie" colorString="#16dbff" sizeString="30"/>
             </NuxtLink>
-            <MenuItem iconString="Obserwowane" colorString="#FFF" sizeString="27"/>
-            <MenuItem iconString="Na żywo" colorString="#FFF" sizeString="27"/>
+            <MenuItem iconString="Obserwowane" colorString="#000" sizeString="27"/>
             <div class="border-b lg:ml-2 mt-2" />
             <div class="lg:block hidden text-xs text-gray-400 font-semibold pt-4 pb-2 px-2">
                 Proponowani twórcy

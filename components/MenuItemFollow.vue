@@ -1,5 +1,5 @@
 <template>
-    <div class="flex items-center hover:bg-[#303030] rounded-md w-full py-1.5 px-2">
+    <div class="flex items-center hover:bg-[#ebebeb] rounded-md w-full py-1.5 px-2">
         <img 
             class="rounded-full lg:mx-0 mx-auto" 
             width="35" 
@@ -7,7 +7,7 @@
         >
         <div class="lg:pl-2.5 lg:block hidden">
             <div class="flex items-center">
-                <div class="font-bold text-[14px] text-white">
+                <div class="font-bold text-[14px] text-black">
                     Nazwa użytkownika
                 </div>
                 <div class="ml-1 rounded-full bg-[#ff7f50] h-[14px] relative">

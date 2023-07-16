@@ -1,7 +1,7 @@
 <template>
   <div
       id="TopNav"
-      class="fixed bg-[#121212] z-30 flex items-center w-full border-b h-[75px]"
+      class="fixed bg-black z-30 flex items-center w-full border-b h-[75px]"
   >
   <div
     :class="route.fullPath === '/' ? 'max-w-[1150px]' : ''"
@@ -57,16 +57,16 @@
    <div
    v-if="showMenu"
 id="PopupMenu"
-class="absolute bg-[#ebebeb] rounded-lg py-1.5 w-[200px] shadow-xl top-[43px] -right-2 border border-gray-300"
+class="absolute bg-white rounded-lg py-1.5 w-[200px] shadow-xl top-[43px] -right-2 border border-gray-300"
    >
 <NuxtLink 
 @click="$event => showMenu = false" 
-class="flex items-center justify-start py-3 px-2 hover:bg-gray-100 cursor-pointer">
+class="flex items-center justify-start py-3 px-2 hover:bg-[#ebebeb] cursor-pointer">
 <Icon name="ph:user" size="20"/>
 <span class="pl-2 font-semibold text-sm">Profil</span>
 </NuxtLink>
 <div
-class="flex items-center justify-start py-3 px-2 hover:bg-gray-100 border-t cursor-pointer">
+class="flex items-center justify-start py-3 px-2 hover:bg-[#ebebeb] border-t cursor-pointer">
 <Icon name="ic:outline-login" size="20"/>
 <span class="pl-2 font-semibold text-sm">Wyloguj się</span>
 </div>

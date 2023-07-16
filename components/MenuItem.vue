@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full flex items-center hover:bg-[#303030] p-2.5 rounded-md">
+  <div class="w-full flex items-center hover:bg-[#ebebeb] p-2.5 rounded-md">
     <div class="flex items-center lg:mx-0 mx-auto">
         <Icon :name="icon" :color="colorString" :size="sizeString" />
         <span 
