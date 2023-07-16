@@ -1,7 +1,7 @@
 <template>
   <div
       id="TopNav"
-      class="fixed bg-[#1e1e1e] z-30 flex items-center w-full border-b h-[61px]"
+      class="fixed bg-[#121212] z-30 flex items-center w-full border-b h-[75px]"
   >
   <div
     :class="route.fullPath === '/' ? 'max-w-[1150px]' : ''"
@@ -11,15 +11,15 @@
         :class="route.fullPath === '/' ? 'w-[80%]' : 'lg:w-[20%] w-[70%]'"
         >
         <NuxtLink to="/">
-         <img width="115" src="assets\images\logo-placeholder.png" alt="logo" />
+         <img width="145" src="assets\images\shotAirLogo.svg" alt="logo" />
         </NuxtLink>
   </div>
   <div
-  class="hidden md:flex items-center border-2 bg-[#1e1e1e] p-1 rounded-full max-w-[380px] w-full"
+  class="hidden md:flex items-center  bg-[#303030] p-1 rounded-full max-w-[380px] w-full"
   >
   <input
   type="text"
-  class="w-full pl-3 my-2 placeholder-[#838383] text-[15px] focus:outline-none !bg-transparent"
+  class="w-full pl-3 my-2 placeholder-[#838383] text-[15px] text-white focus:outline-none bg-transparent"
   placeholder="Wyszukaj twórców"
   > 
   <div
@@ -29,7 +29,7 @@
   </div>
   </div>
   <div class="flex items-center justify-end gap-3 min-w-[275px] max-w-[320px] w-full"> 
-  <button class="flex items-center border rounded-sm px-3 py-[6px]">
+  <button class="flex items-center rounded-sm px-3 py-[6px] bg-[#ff7f50]">
     <Icon name="mdi:plus" color="#FFF" size="22"/>
     <span class="text-white px-2 font-medium text-[15px]">Dodaj</span>
   </button>
@@ -57,7 +57,7 @@
    <div
    v-if="showMenu"
 id="PopupMenu"
-class="absolute bg-white rounded-lg py-1.5 w-[200px] shadow-xl border top-[43px] -right-2"
+class="absolute bg-[#ebebeb] rounded-lg py-1.5 w-[200px] shadow-xl top-[43px] -right-2 border border-gray-300"
    >
 <NuxtLink 
 @click="$event => showMenu = false" 
