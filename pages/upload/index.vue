@@ -40,4 +40,21 @@
 
 <script setup>
 import UploadLayout from "@/layouts/UploadLayout.vue";
+import axios from 'axios'
+
+const url = ref("");
+
+var addShot = () => {
+  if (url == '') {
+    alert("Wypełnij wszystkie pola!");
+  } else {
+    const u = new URL(url.value);
+    const saplitedPathname = u.pathname.split("/");
+    const clipID = u.pathname.split("/")[saplitedPathname.length - 1];
+    const newUrl = `https://clips.twitch.tv/embed?clip=${clipID}&parent=localhost`;
+    axios.post("http://localhost:3000/post", {
+          
+            })
+  }
+};
 </script>

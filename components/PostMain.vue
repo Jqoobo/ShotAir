@@ -233,13 +233,25 @@
   </div>
 </template>
 
-<script setup>
-const a = new URL(
-  "https://www.twitch.tv/parisplatynov/clip/BenevolentEntertainingKuduOMGScoots-vK7pxv7JegP1hOU1?a=2"
-);
-const saplitedPathname = a.pathname.split("/");
-const clipID = a.pathname.split("/")[saplitedPathname.length - 1];
-const Url = `https://clips.twitch.tv/embed?clip=${clipID}&parent=localhost`;
+<script>
 
-clipUrl: Url;
+import axios from 'axios'
+    export default{
+      data(){
+     return {
+      data: [],
+    };
+  },
+
+
+methods: {
+        async getItem() {
+        axios.get("http://localhost:8080/posts")
+        .then((response) => {
+          this.data = response.data;
+          console.log(response);
+        })
+      }
+}
+}
 </script>
