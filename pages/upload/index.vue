@@ -10,11 +10,12 @@
         </div>
       </div>
       <input
-        placeholder="Link (Twitch/YouTube)"
         v-model="url"
+        placeholder="Link (Twitch/YouTube)"
         class="border border-color-gray-300 rounded-md w-full py-2 px-4 mt-4 focus:outline-none focus:ring-2 focus:ring-[#ff7f50] focus:border-transparent"
       />
       <input
+        v-model="description"
         placeholder="Opis"
         max-length="100"
         class="border border-color-gray-300 rounded-md w-full h-[60px] py-2 px-4 mt-4 focus:outline-none focus:ring-2 focus:ring-[#ff7f50] focus:border-transparent"
@@ -28,7 +29,7 @@
           </button>
         </a>
         <button
-          @click="addShot()"
+          @click="addShot"
           class="px-10 py-2.5 mt-8 border text-[16px] text-white bg-[#ff7f50] rounded-sm"
         >
           Dodaj
@@ -38,23 +39,44 @@
   </UploadLayout>
 </template>
 
-<script setup>
+<script>
 import UploadLayout from "@/layouts/UploadLayout.vue";
-import axios from 'axios'
+import axios from "axios";
 
-const url = ref("");
+export default {
+  components: {
+    UploadLayout,
+  },
+  data() {
+    return {
+      url: "",
+      description: "",
+    };
+  },
+  methods: {
+    async addShot() {
+      const url = this.url;
+      const u = new URL(url);
+      const saplitedPathname = u.pathname.split("/");
+      const clipID = u.pathname.split("/")[saplitedPathname.length - 1];
+      const newUrl = `https://clips.twitch.tv/embed?clip=${clipID}&parent=localhost`;
 
-var addShot = () => {
-  if (url == '') {
-    alert("Wypełnij wszystkie pola!");
-  } else {
-    const u = new URL(url.value);
-    const saplitedPathname = u.pathname.split("/");
-    const clipID = u.pathname.split("/")[saplitedPathname.length - 1];
-    const newUrl = `https://clips.twitch.tv/embed?clip=${clipID}&parent=localhost`;
-    axios.post("http://localhost:3000/post", {
-          
-            })
-  }
+      const response = await axios.post(
+        "http://localhost:8080/posts",
+        {
+          url: newUrl,
+          description: this.description,
+        },
+        {
+          headers: {
+            Authorization:
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InppbWExIiwidXNlcklkIjoiMzYxN2I4MzctOTJiNC00NDBjLTgwYWYtMjA2ZTZlZDYzMDRjIiwiaWF0IjoxNjg5NjMxNzgwLCJleHAiOjE2ODk2Mzc3ODB9.NDiVDTvwLNTIPKtJ7hYZfbW4ShdHRNOO85JUsLtaqx4",
+          },
+        }
+      );
+      console.log(response);
+      this.$router.push("/");
+    },
+  },
 };
 </script>
