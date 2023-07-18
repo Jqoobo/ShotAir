@@ -9,6 +9,12 @@
           Dodaj shota, które przypisze się do twojego konta
         </div>
       </div>
+      <div
+        class="bg-orange-100 border-l-4 border-orange-500 text-orange-700 p-4 my-2"
+        v-if="error"
+      >
+        <p class="font-semibold">{{ error }}</p>
+      </div>
       <input
         v-model="url"
         placeholder="Link (Twitch/YouTube)"
@@ -17,6 +23,12 @@
       <input
         v-model="description"
         placeholder="Opis"
+        max-length="100"
+        class="border border-color-gray-300 rounded-md w-full h-[60px] py-2 px-4 mt-4 focus:outline-none focus:ring-2 focus:ring-[#ff7f50] focus:border-transparent"
+      />
+      <input
+        v-model="hashtags"
+        placeholder="Hashtagi"
         max-length="100"
         class="border border-color-gray-300 rounded-md w-full h-[60px] py-2 px-4 mt-4 focus:outline-none focus:ring-2 focus:ring-[#ff7f50] focus:border-transparent"
       />
@@ -51,31 +63,66 @@ export default {
     return {
       url: "",
       description: "",
+      hashtags: "",
+      error: "",
     };
   },
   methods: {
     async addShot() {
-      const url = this.url;
-      const u = new URL(url);
-      const saplitedPathname = u.pathname.split("/");
-      const clipID = u.pathname.split("/")[saplitedPathname.length - 1];
-      const newUrl = `https://clips.twitch.tv/embed?clip=${clipID}&parent=localhost`;
+      try {
+        if (this.url.includes("twitch.tv")) {
+          console.log(this.url);
+          const url = this.url;
+          const t = new URL(url);
+          const saplitedPathname = t.pathname.split("/");
+          const clipID = t.pathname.split("/")[saplitedPathname.length - 1];
+          const twitchURL = `https://clips.twitch.tv/embed?clip=${clipID}&parent=localhost`;
 
-      const response = await axios.post(
-        "http://localhost:8080/posts",
-        {
-          url: newUrl,
-          description: this.description,
-        },
-        {
-          headers: {
-            Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InppbWExIiwidXNlcklkIjoiMzYxN2I4MzctOTJiNC00NDBjLTgwYWYtMjA2ZTZlZDYzMDRjIiwiaWF0IjoxNjg5NjMxNzgwLCJleHAiOjE2ODk2Mzc3ODB9.NDiVDTvwLNTIPKtJ7hYZfbW4ShdHRNOO85JUsLtaqx4",
-          },
+          const response = await axios.post(
+            "http://localhost:8080/posts",
+            {
+              url: twitchURL,
+              description: this.description,
+              hashtags: this.hashtags,
+            },
+            {
+              headers: {
+                Authorization:
+                  "Bearer" + " " + localStorage.getItem("access_token"),
+              },
+            }
+          );
+          console.log(response);
+          this.$router.push("/");
+        } else if (this.url.includes("youtu.be")) {
+          const url = "https://youtu.be/vEO45dRkGwk";
+          const y = new URL(url);
+          const saplitedPathname = y.pathname.split("/");
+          const clipID = y.pathname.split("/")[saplitedPathname.length - 1];
+          const ytURL = `https://www.youtube.com/embed/${clipID}`;
+
+          const response = await axios.post(
+            "http://localhost:8080/posts",
+            {
+              url: ytURL,
+              description: this.description,
+              hashtags: this.hashtags,
+            },
+            {
+              headers: {
+                Authorization:
+                  "Bearer" + " " + localStorage.getItem("access_token"),
+              },
+            }
+          );
+          console.log(response);
+          this.$router.push("/");
+        } else {
+          this.error = "Błędne dane lub nie wprowadzono wszystkich danych";
         }
-      );
-      console.log(response);
-      this.$router.push("/");
+      } catch (e) {
+        this.error = "Błędne dane lub nie wprowadzono wszystkich danych";
+      }
     },
   },
 };
