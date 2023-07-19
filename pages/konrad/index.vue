@@ -20,7 +20,7 @@
           <a href="mailto:w64885@student.wsiz.edu.pl"
             >w64885@student.wsiz.edu.pl</a
           >
-          <a href="https://github.com/">
+          <a href="https://github.com/KonRze">
             <Icon name="grommet-icons:github" size="50" class="mt-3" />
           </a>
         </div>

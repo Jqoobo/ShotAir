@@ -41,7 +41,7 @@
               <img
                 class="rounded-full"
                 width="33"
-                src="assets\images\c635b669d116b4da3e9fa3f29517d41d.jpg"
+                src="assets\images\balenciaga3.png"
               />
             </button>
             <div
