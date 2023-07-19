@@ -6,7 +6,7 @@
       <div>
         <div class="text-[23px] font-semibold">Dodaj shota</div>
         <div class="text-gray-400 mt-1">
-          Dodaj shota, które przypisze się do twojego konta
+          Dodaj shota, który zostanie wyświetlony na stronie głównej
         </div>
       </div>
       <div

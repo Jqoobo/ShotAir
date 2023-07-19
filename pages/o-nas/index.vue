@@ -5,22 +5,23 @@
     >
       <div>
         <div class="text-[32px] my-4 font-semibold text-center">O nas</div>
-        <div class="text-black mt-1 text-center">
-          Witaj na stronie o naszej niezwykłej aplikacji ShotAir! Jesteśmy
-          zespołem kreatywnych i innowacyjnych osób, które pragną uczynić twoje
-          doświadczenia z krótkimi wideo z transmisji na żywo, zwanych
-          "shotami", niezapomnianymi i ekscytującymi.
+        <div class="text-black mt-1 text-justify mb-[45px]">
+          Witaj na stronie opisującą naszą niezwykłą aplikację ShotAir! Jesteśmy
+          zespołem kreatywnych i innowacyjnych studentów, którzy pragną tworzyć
+          ambitne zaawansowane aplikacje. Nasza aplikacja ShotAir jest w pełni w
+          pełni funkcjonalna i gotowa do użycia. Została stworzona z myślą o
+          tym, aby umożliwić użytkownikom dzielenie się swoimi ulubionymi
+          momentami lub filmikami z innymi.
         </div>
         <div class="text-[32px] my-4 font-semibold text-center">
-          Nasza misja
+          Cel projektu
         </div>
-        <div class="text-black mt-1 text-center">
-          Naszym głównym celem jest zrewolucjonizowanie sposobu, w jaki ludzie
-          dzielą się swoimi krótkimi, pełnymi energii i emocji wideo. Chcemy
-          stworzyć platformę, która pozwoli użytkownikom na łatwe nagrywanie i
-          udostępnianie swoich ulubionych chwil z wydarzeń na żywo, imprez,
-          podróży i nie tylko. Dzięki naszej aplikacji możesz być w centrum
-          wydarzeń i dzielić się tym z całą społecznością ShotAir!
+        <div class="text-black mt-1 text-justify">
+          Celem projektu było zbudowaniu aplikacji pozwalająca na dodawanie
+          przez użytkowników swoich ulubionych momentów z transmisji na żywo,
+          filmów czy teledysków, w formie krótkich filmików. Nazwa aplikacja
+          wzięła się od słowa Shot, która oznacza krótki filmik, a Air "bycia"
+          na żywo. Chodzi tu o aluzję do transmisji prowadzonych na żywo.
         </div>
       </div>
     </div>

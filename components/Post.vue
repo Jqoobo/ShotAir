@@ -7,9 +7,9 @@
           <img
             class="rounded-full max-h-[60px] mb-2 ml-1"
             width="60"
-            src="assets\images\c635b669d116b4da3e9fa3f29517d41d.jpg"
+            src="assets/images/balenciaga3.png"
           />
-          <button class="mb-2 ml-2.5">
+          <button class="mb-2 ml-2">
             <span class="font-bold hover:underline cursor-pointer">
               {{ item.user.name }}
             </span>

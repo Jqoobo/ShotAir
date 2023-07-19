@@ -40,7 +40,7 @@
           <span class="text-[#ff7f50]">liczbę(np.1)</span>!</a
         >
       </div>
-      <div class="flex gap-3">
+      <div class="flex gap-3 justify-center">
         <button
           @click="register"
           class="px-10 py-2.5 mt-8 border text-[16px] text-white bg-[#ff7f50] rounded-sm"
