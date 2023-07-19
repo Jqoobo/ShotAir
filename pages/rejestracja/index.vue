@@ -87,7 +87,8 @@ export default {
         console.log(response);
         this.$router.push("/");
       } catch (e) {
-        this.error = "Użytkownik o takim nicku już istnieje";
+        this.error =
+          "Użytkownik o takim nicku już istnieje lub wprowadzono niepoprawne dane";
       }
     },
     async passvisibility() {
