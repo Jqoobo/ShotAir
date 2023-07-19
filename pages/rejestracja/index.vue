@@ -26,12 +26,18 @@
         max-length="100"
         class="border border-color-gray-300 rounded-md w-full h-[60px] py-2 px-4 mt-4 focus:outline-none focus:ring-2 focus:ring-[#ff7f50] focus:border-transparent"
       />
-      <input
-        v-model="password"
-        placeholder="Hasło"
-        max-length="100"
-        class="border border-color-gray-300 rounded-md w-full h-[60px] py-2 px-4 mt-4 focus:outline-none focus:ring-2 focus:ring-[#ff7f50] focus:border-transparent"
-      />
+      <div class="flex flex-row">
+        <input
+          v-model="password"
+          :type="passwordtext"
+          placeholder="Hasło"
+          max-length="100"
+          class="border border-color-gray-300 rounded-md w-full h-[60px] py-2 px-4 mt-4 focus:outline-none focus:ring-2 focus:ring-[#ff7f50] focus:border-transparent"
+        />
+        <button @click="passvisibility">
+          <Icon :name="eye" size="20" class="ml-2 mt-5" />
+        </button>
+      </div>
       <div class="mx-1 my-2 text-center">
         <a class="text-gray-500 mt-1"
           >Hasło musi zawierać
@@ -45,7 +51,7 @@
           @click="register"
           class="px-10 py-2.5 mt-8 border text-[16px] text-white bg-[#ff7f50] rounded-sm"
         >
-          Zarejestruj
+          Zarejestruj się
         </button>
       </div>
     </div>
@@ -66,6 +72,8 @@ export default {
       username: "",
       password: "",
       error: "",
+      passwordtext: "password",
+      eye: "teenyicons:eye-closed-solid",
     };
   },
   methods: {
@@ -80,6 +88,15 @@ export default {
         this.$router.push("/");
       } catch (e) {
         this.error = "Użytkownik o takim nicku już istnieje";
+      }
+    },
+    async passvisibility() {
+      if (this.passwordtext == "password") {
+        this.passwordtext = "text";
+        this.eye = "teenyicons:eye-solid";
+      } else {
+        this.passwordtext = "password";
+        this.eye = "teenyicons:eye-closed-solid";
       }
     },
   },

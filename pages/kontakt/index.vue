@@ -3,7 +3,7 @@
     <div
       class="w-full mt-[100px] mb-[40px] bg-white shadow-lg rounded-md py-6 md:px-10 px-4"
     >
-      <div class="pb-[30px]">
+      <div class="pb-[15px]">
         <div class="text-[32px] my-4 font-semibold text-center mb-10">
           Kontakt
         </div>

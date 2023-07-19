@@ -1,7 +1,7 @@
 <template>
   <Onas>
     <div
-      class="w-full mt-[100px] mb-[40px] bg-white shadow-lg rounded-md py-6 md:px-10 px-4"
+      class="w-full mt-[100px] mb-[40px] pb-[60px] bg-white shadow-lg rounded-md py-6 md:px-10 px-4"
     >
       <div>
         <div class="text-[32px] my-4 font-semibold text-center">O nas</div>

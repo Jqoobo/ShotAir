@@ -70,7 +70,7 @@
           >
             <a class="text-[#ff7f50] hover:text-orange-600" href="/logowanie"
               >Zaloguj się</a
-            >, aby móc polubić shota!
+            >, aby polubić shota!
           </div>
         </div>
       </div>

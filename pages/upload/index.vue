@@ -95,7 +95,7 @@ export default {
           console.log(response);
           this.$router.push("/");
         } else if (this.url.includes("youtu.be")) {
-          const url = "https://youtu.be/vEO45dRkGwk";
+          const url = this.url;
           const y = new URL(url);
           const saplitedPathname = y.pathname.split("/");
           const clipID = y.pathname.split("/")[saplitedPathname.length - 1];
