@@ -1,5 +1,5 @@
 <div align="center">
-<img src="https://raw.githubusercontent.com/nuxt/nuxt/HEAD/.github/assets/banner.png" alt="Version">
+<img src="https://raw.githubusercontent.com/nuxt/nuxt/main/.github/assets/banner.svg" alt="Version">
 </div>
 
 # 👋 Welcome to Nuxt
